@@ -1,9 +1,15 @@
+set nocompatible
+filetyp off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'majutsushi/tagbar'
+call vundle#end()
+filetype plugin indent on
+
 set number
 syntax enable
 syntax on "按照指定主题进行语法高亮
-filetype on "开启文件类型侦测
-filetype plugin on "根据侦测的不同类型文件对于不同插件
-filetype indent on "不同文件不同缩进
 set laststatus=2 "设置状态栏
 set tabstop=4 "tab长度
 set smartindent "智能缩进
@@ -19,34 +25,3 @@ set cursorline
 "colorscheme torte
 highlight Pmenu guibg=darkgrey guifg=black
 highlight PmenuSel guibg=lightgrey guifg=black
-
-"add tags
-set tags+=.
-"自动补全
-set completeopt=menu,menuone "关闭智能补全时的预览的窗口
-let OmniCpp_MayCompleteDot=1
-let OmniCpp_MayCompleteArrow=1
-let OmniCpp_MayCompleteScope=1
-let OmniCpp_SelectFirstItem=2
-let OmniCpp_NamespaceSearch=1
-let OmniCpp_ShowPrototypeInAbbr=1
-let OmniCpp_GlobalScopeSearch=1
-let OmniCpp_DisplayMode=1
-let OmniCpp_ShowScopeInAbbr=1
-let OmniCpp_ShowAccess=1
-"自动补全的快捷键映射
-inoremap <expr> <CR> pumvisible()?"\<C-Y>":"\<CR>"
-inoremap <expr> <C-J> pumvisible()?"\<PageDown>\<C-N>\<C-P>":"\<C-X><C-O>"
-inoremap <expr> <C-K> pumvisible()?"\<PageUp>\<C-P>\<C-N>":"\<C-K>"
-inoremap <expr> <C-U> pumvisible()?"\<C-E>":"\<C-U>"
-
-
-"TList的配置
-let Tlist_Ctags_Cmd='ctags'
-let Tlist_Use_Right_Window=0 "显示窗口左边
-let Tlist_Show_One_File=1
-let Tlist_Exit_OnlyWindow=1
-let Tlist_Process_File_Always=1 "实时更新
-"代码折叠
-set foldmethod=syntax 
-
