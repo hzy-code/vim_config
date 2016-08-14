@@ -20,6 +20,7 @@ set incsearch "即时查找
 set hlsearch "高亮搜索结果
 set mouse=a "开启鼠标
 set cursorline
+set expandtab "空格代替tab
 
 "配色方案
 "colorscheme torte
