@@ -1,27 +1,34 @@
 set nocompatible
-filetyp off
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'majutsushi/tagbar'
+Plugin 'Tagbar'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 call vundle#end()
-filetype plugin indent on
 
-set number
-syntax enable
-syntax on "按照指定主题进行语法高亮
-set laststatus=2 "设置状态栏
-set tabstop=4 "tab长度
-set smartindent "智能缩进
-set autoindent "自动缩进
-set cindent shiftwidth=4 "自动缩进为4个空格
-set showmatch "显示括号匹配情况
-set incsearch "即时查找
-set hlsearch "高亮搜索结果
-set mouse=a "开启鼠标
+filetype plugin indent on
+set nu
+set mouse=a
+set laststatus=2
+set incsearch
+set ignorecase
+set smartcase
+set ruler
+set hlsearch
 set cursorline
 
-"配色方案
-"colorscheme torte
-highlight Pmenu guibg=darkgrey guifg=black
-highlight PmenuSel guibg=lightgrey guifg=black
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set smartindent
+set autoindent
+
+source $VIMRUNTIME/ftplugin/man.vim
+nmap <Leader>man :Man 3 <cword><CR>
+set t_Co=254
+
+"Tagbar
+let g:tagbar_left=1
+
